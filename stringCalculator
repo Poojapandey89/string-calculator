@@ -21,8 +21,15 @@ function add(numbers) {
     // Split by delimiter
     let numArray = numericString.split(delimiter);
 
+   // Check for negative numbers and throw error
+    let negativeNumbers = numArray.filter(num => parseInt(num, 10) < 0);
+    if (negativeNumbers.length > 0) {
+      throw new Error(`Negative numbers not allowed ${negativeNumbers.join(', ')}`);
+    }
+
     // Return the sum
     return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
 }
 
 console.log(add("//;\n1;2"));
+console.log(add("//;\n-1;2"));
