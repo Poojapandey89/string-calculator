@@ -1,6 +1,6 @@
 //Created a function file
 
-function add(numbers) {
+export function add(numbers) {
     // Check empty string
     if (!numbers) return 0;
   
@@ -31,5 +31,5 @@ function add(numbers) {
     return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
 }
 
-console.log(add("//;\n1;2"));
-console.log(add("//;\n-1;2"));
+// console.log(add("//;\n1;2"));
+// console.log(add("//;\n-1;2"));
