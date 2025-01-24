@@ -1,1 +1,28 @@
-//created a file
+//Created a function file
+
+function add(numbers) {
+    // Check empty string
+    if (!numbers) return 0;
+  
+    // Create delimiter
+    let delimiter = ',';
+    let numericString = numbers;
+  
+    //Check for other delimiters and extact numeric values
+    if (numbers.startsWith('//')) {
+      let delimiterIndex = numbers.indexOf('\n');
+      delimiter = numbers.slice(2, delimiterIndex);
+      numericString = numbers.slice(delimiterIndex + 1);
+    }
+
+   // Replace newlines with delimiter
+    numericString = numericString.replace(/\n/g, delimiter);  
+  
+    // Split by delimiter
+    let numArray = numericString.split(delimiter);
+
+    // Return the sum
+    return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
+}
+
+console.log(add("//;\n1;2"));
