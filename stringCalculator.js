@@ -31,5 +31,7 @@ export function add(numbers) {
     return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
 }
 
-// console.log(add("//;\n1;2"));
-// console.log(add("//;\n-1;2"));
+// console.log("Output 1 ===>",add());
+// console.log("Output 2 ===>",add("1,5"));
+// console.log("Output 3 ===>",add("//;\n1;2"));
+// console.log("Output 4 ===>",add("//;\n-1;2"));
