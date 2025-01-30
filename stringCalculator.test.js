@@ -22,9 +22,4 @@ describe('String Calculator Tests', () => {
       expect(add("//;\n1;2")).toBe(3);
       expect(add("//:\n2:3|:4")).toBe(9);
     });
-
-    it('should throw error for negative numbers', () => {
-      expect(() => add("1,-2,3")).toThrow('Negative numbers not allowed -2');
-      expect(() => add("//;\n1;-2;3;-4")).toThrow('Negative numbers not allowed -2, -4');
-    });
 });

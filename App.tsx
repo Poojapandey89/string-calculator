@@ -21,7 +21,7 @@ function App(): React.JSX.Element {
   const [result, setResult] = useState();
 
   const onCalculate = () => {
-    let result = add(text);
+    let result = add(text.trim());
     setResult(result);
   };
   const onClear = () => {
@@ -38,7 +38,15 @@ function App(): React.JSX.Element {
           onChangeText={onChangeText}
           value={text}
           multiline
+          testID='textbox'
         />
+        <TouchableOpacity
+          style={styles.linkButtonStyle}
+          onPress={onClear}
+          testID='clear'
+        >
+          <Text style={styles.linkTitleStyle}>Clear</Text>
+        </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonStyle}
           onPress={onCalculate}
@@ -61,9 +69,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  linkButtonStyle: {
+    margin: 12,
+  },
+  linkTitleStyle: {
+    fontSize: 18,
+    color: '#007AFF',
+  },
   buttonStyle: {
     height: 45,
-    margin: 12,
+    margin: 15,
     backgroundColor: '#007AFF',
     alignItems: 'center',
     justifyContent: 'center',
